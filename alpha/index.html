@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IDM241-Alpha_Description</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <div class="main-wrapper">
+        <div class="bottom-text">
+
+            <h3 class="doc-title">Object: <a href="https://tubitv.com" target="_blank" rel="noopener noreferrer">Tubi</a> Poster Interaction</h3>
+
+            <p><strong>TRIGGERS:</strong></p>
+            <p>scroll down slightly until finding the recommended section</p>
+            <ul>
+                <li>hovering over any poster for a show or movie on the Recommended section</li>
+                <li>hovering over the play button</li>
+                <li>hover off the play button</li>
+                <li>hover off the poster</li>
+                
+            </ul>
+
+            <p><strong>RULES:</strong></p>
+            <p><strong>hovering over the poster</strong></p>
+            <ul>
+                <li>the cursor becomes a pointer</li>
+                <li>the poster picture slightly enlarges, but the frame stays the same size</li>
+                <li>the poster picture becomes slightly darker</li>
+                <li>a yellow play button appears in the middle of the poster</li>
+                <ul>
+                    <li>the button enlarges slightly on hover</li>
+                    <li>the cursor becomes a pointer</li>
+                </ul>
+                <li>the text "Add to My List" appears at the bottom of the poster</li>
+            </ul>
+
+            <p><strong>hovering off of the play button</strong></p>
+            <ul>
+                <li>the play button goes back to its original size</li>
+                <li>the cursor goes back to the default arrow</li>
+            </ul>
+            <p><strong>hovering off of the poster</strong></p>
+            <ul>
+                <li>the poster picture goes back to its original size</li>
+                <li>the poster picture goes back to its original brightness</li>
+                <li>the play button disappears</li>
+                <li>the text "Add to My List" disappears</li>
+                <li>the cursor goes back to the default arrow</li>
+            </ul>
+
+            <p><strong>FEEDBACK:</strong></p>
+            <p><strong>hovering over the poster</strong></p>
+            <ul>
+                <li>the cursor becomes a pointer</li>
+                <li>the poster picture slightly enlarges, but the frame stays the same size</li>
+                <li>the poster picture becomes slightly darker</li>
+                <li>a yellow play button appears in the middle of the poster</li>
+                <li>the text "Add to My List" appears at the bottom of the poster
+                    <ul>
+                        <li>the button enlarges slightly on hover</li>
+                        <li>the cursor becomes a pointer</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <p><strong>LOOPS/MODE:</strong></p>
+            <p>N/A</p>
+        </div>
+
+        <div class="page-container">
+            <!-- microinteractions 
+            <div class="poster-section">
+                <div class="poster">
+                    <img src="essentials/pictures/goosebumps-poster.png" alt="Goosebumps Poster" class="poster-image">
+                        
+                    <div class="poster-hover">
+                        <button class="play-btn" aria-label="Play Poster">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                        </button>
+
+                        <div class="poster-text">
+                            <button class="add-btn">Add to My List</button>
+                        </div>
+                    </div>
+                </div>
+                <p class="poster-caption">hover over the poster and the play button</p>
+            </div>  -->
+
+            <!-- video showcasing the original tubi interaction -->
+            <div class="video-section">
+                <div class="video-wrapper">
+                    <video id="tubiVideo" src="essentials/pictures/tubi-animation.mp4" preload="metadata"></video>
+                    <button id="videoPlayBtn" class="video-overlay-btn" aria-label="Play Video">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M8 5v14l11-7z"/>
+                        </svg>
+                    </button>
+                </div>
+                
+                <p class="video-caption">
+                    <a href="https://tubitv.com" target="_blank" rel="noopener noreferrer">tubi</a> recommended section on the main page
+                </p>
+            </div>
+
+        </div>
+
+        <!-- rule explanation -->
+        
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

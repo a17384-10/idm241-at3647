@@ -1,0 +1,12 @@
+AI usage:
+
+- Used Gemini to figure out how to create a play button without using an image and how to make sure it does the animation
+
+- Used Gemini to figure out how to put a playable video into the html page beside the poster
+
+- Used Gemini to fully figure out flex grid for the different layouts
+
+in terms of the extra blurring delay when the 'add to my list' bar appears, i'm not sure how to fix it. i asked gemini, but did not get a super clear answer on how to fix it other than this:
+# The perceived delay or lag happens because of how browsers handle backdrop-filter during opacity transitions.
+
+# When the parent overlay fades in from opacity: 0 to opacity: 1, the browser's graphics engine is forced to recalculate and re-render the background blur frame-by-frame at fractional opacities. On many GPUs, this creates a slight rendering lag where the blur takes a moment to "settle." 
