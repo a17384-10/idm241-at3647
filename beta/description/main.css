@@ -1,0 +1,394 @@
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  margin: 0;
+  background-color: #0b0c10;
+  color: #e1e1e1;
+}
+
+/* page wrapper */
+.main-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* video container */
+.page-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 32px;
+  padding: 40px 20px;
+  flex-wrap: wrap;
+}
+
+.poster-section {
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.poster {
+  position: relative;
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease;
+}
+
+.poster:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(248, 232, 0, 0.2);
+}
+
+.poster-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.4s ease;
+}
+
+.poster-caption {
+  margin-top: 14px;
+  font-size: 14px;
+  color: #777777;
+  text-align: center;
+}
+
+.poster-hover {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.75) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  transition: opacity 0.35s ease-in-out;
+}
+
+.poster:hover .poster-hover {
+  opacity: 1;
+}
+
+.poster:hover .poster-image {
+  transform: scale(1.08);
+  filter: brightness(0.85);
+}
+
+.play-btn {
+  width: 72px;
+  height: 72px;
+  background-color: #f8e800;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 0 0 0 rgba(248, 232, 0, 0.6);
+  transform: scale(0.6);
+  opacity: 0;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), 
+              background-color 0.2s ease, 
+              box-shadow 0.3s ease, 
+              opacity 0.3s ease;
+}
+
+.poster:hover .play-btn {
+  transform: scale(1);
+  opacity: 1;
+  transition-delay: 0.08s;
+  animation: pulseGlow 2s infinite;
+}
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(248, 232, 0, 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 16px rgba(248, 232, 0, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(248, 232, 0, 0);
+  }
+}
+
+.play-btn:hover {
+  transform: scale(1.15) !important;
+  background-color: #ffef19;
+  animation: none !important;
+  box-shadow: 0 10px 25px rgba(248, 232, 0, 0.7);
+}
+
+.play-btn:active {
+  transform: scale(0.95) !important;
+}
+
+.play-btn svg {
+  width: 36px;
+  height: 36px;
+  fill: #000000;
+  margin-left: 3px;
+  transition: transform 0.2s ease;
+}
+
+.play-btn:hover svg {
+  transform: scale(1.1);
+}
+
+.poster-text {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 16px 0;
+  display: flex;
+  justify-content: center;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.4s ease;
+}
+
+.poster:hover .poster-text {
+  transform: translateY(0);
+  opacity: 1;
+  transition-delay: 0.15s;
+}
+
+.add-btn {
+  position: relative;
+  overflow: visible;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  width: 88%;
+  padding: 12px 0;
+  border-radius: 24px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.add-btn:hover {
+  background: rgba(248, 232, 0, 0.2);
+  border-color: #f8e800;
+  color: #f8e800;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(248, 232, 0, 0.3);
+}
+
+.add-btn:active {
+  transform: translateY(0) scale(0.94) !important;
+  transition: transform 0.1s ease;
+}
+
+.add-btn.added {
+  background: #f8e800;
+  color: #000000;
+  border-color: #f8e800;
+  box-shadow: 0 0 20px rgba(248, 232, 0, 0.7);
+  animation: clickBounce 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.add-btn.added:hover {
+  background: #ffef19;
+  color: #000000;
+}
+
+@keyframes clickBounce {
+  0% { transform: scale(0.92); }
+  50% { transform: scale(1.06); }
+  100% { transform: scale(1); }
+}
+
+.sparkle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #fff;
+  border-radius: 50%;
+  pointer-events: none;
+  box-shadow: 0 0 8px #f8e800, 0 0 15px #ffef19;
+  animation: sparkleBurst 0.6s ease-out forwards;
+}
+
+@keyframes sparkleBurst {
+  0% { transform: translate(0, 0) scale(1); opacity: 1; }
+  100% { transform: translate(var(--tx), var(--ty)) scale(0); opacity: 0; }
+}
+
+/* Video Section Styling */
+.video-section {
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  background-color: #000000;
+}
+
+.video-wrapper video {
+  width: 100%;
+  display: block;
+  cursor: pointer;
+}
+
+.video-overlay-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  background-color: rgba(0, 0, 0, 0.65);
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  z-index: 2;
+}
+
+.video-overlay-btn:hover {
+  background-color: rgba(0, 0, 0, 0.85);
+  transform: translate(-50%, -50%) scale(1.08);
+}
+
+.video-overlay-btn:active {
+  transform: translate(-50%, -50%) scale(0.95);
+}
+
+.video-overlay-btn svg {
+  width: 26px;
+  height: 26px;
+  fill: #ffffff;
+  margin-left: 3px;
+}
+
+.video-caption {
+  margin-top: 14px;
+  font-size: 14px;
+  color: #777777;
+  text-align: center;
+}
+
+/* Documentation Explanation Styling with Distinct Section Highlights */
+.bottom-text {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 20px 60px;
+  box-sizing: border-box;
+  font-size: 14px;
+  line-height: 1.6;
+  text-align: left;
+  color: #cccccc;
+}
+
+.doc-title {
+  font-size: 20px;
+  margin-bottom: 24px;
+  color: #ffffff;
+  border-bottom: 2px solid #222530;
+  padding-bottom: 12px;
+}
+
+.doc-title a {
+  color: #f8e800;
+  text-decoration: none;
+}
+
+.doc-title a:hover {
+  text-decoration: underline;
+}
+
+/* Individual Section Containers with Distinct Highlights & Background Tints */
+.doc-section {
+  padding: 20px 24px;
+  border-radius: 12px;
+  margin-bottom: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Triggers Section - Soft Blue Accent */
+.section-triggers {
+  background-color: rgba(51, 153, 255, 0.06);
+  border-left: 4px solid #ffa7d3;
+}
+.section-triggers .section-heading {
+  color: #c1fffe;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+}
+
+/* Rules Section - Soft Yellow Accent */
+.section-rules {
+  background-color: rgba(248, 232, 0, 0.05);
+  border-left: 4px solid #f8e800;
+}
+.section-rules .section-heading {
+  color: #f8e800;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+}
+
+/* Feedback Section - Soft Green Accent */
+.section-feedback {
+  background-color: rgba(46, 204, 113, 0.06);
+  border-left: 4px solid #2ecc71;
+}
+.section-feedback .section-heading {
+  color: #2ecc71;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+}
+
+/* Loops/Mode Section - Soft Purple Accent */
+.section-loops {
+  background-color: rgba(155, 89, 182, 0.06);
+  border-left: 4px solid #9b59b6;
+}
+.section-loops .section-heading {
+  color: #bb8fce;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+}
+
+/* Typography adjustments inside sections */
+.sub-heading {
+  color: #ffffff;
+  margin-top: 16px;
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+
+.bottom-text ul {
+  padding-left: 20px;
+  list-style-type: disc;
+  margin-top: 4px;
+  margin-bottom: 12px;
+}
+
+.bottom-text li {
+  margin-bottom: 6px;
+  color: #b0b3b8;
+}
