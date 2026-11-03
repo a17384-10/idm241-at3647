@@ -6,6 +6,8 @@ AI usage:
 
 - Used Gemini to fully figure out flex grid for the different layouts
 
+- used gemini to write comments 
+
 in terms of the extra blurring delay when the 'add to my list' bar appears, i'm not sure how to fix it. i asked gemini, but did not get a super clear answer on how to fix it other than this:
 # The perceived delay or lag happens because of how browsers handle backdrop-filter during opacity transitions.
 
