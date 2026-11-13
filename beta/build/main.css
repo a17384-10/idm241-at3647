@@ -321,7 +321,6 @@ body {
   text-decoration: underline;
 }
 
-/* Individual Section Containers with Distinct Highlights & Background Tints */
 .doc-section {
   padding: 20px 24px;
   border-radius: 12px;
@@ -329,7 +328,7 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* Triggers Section - Soft Blue Accent */
+/* Triggers Section */
 .section-triggers {
   background-color: rgba(51, 153, 255, 0.06);
   border-left: 4px solid #ffa7d3;
@@ -340,7 +339,7 @@ body {
   letter-spacing: 0.5px;
 }
 
-/* Rules Section - Soft Yellow Accent */
+/* Rules Section */
 .section-rules {
   background-color: rgba(248, 232, 0, 0.05);
   border-left: 4px solid #f8e800;
@@ -351,7 +350,7 @@ body {
   letter-spacing: 0.5px;
 }
 
-/* Feedback Section - Soft Green Accent */
+/* Feedback Section */
 .section-feedback {
   background-color: rgba(46, 204, 113, 0.06);
   border-left: 4px solid #2ecc71;
@@ -362,7 +361,7 @@ body {
   letter-spacing: 0.5px;
 }
 
-/* Loops/Mode Section - Soft Purple Accent */
+/* Loops/Mode Section */
 .section-loops {
   background-color: rgba(155, 89, 182, 0.06);
   border-left: 4px solid #9b59b6;
@@ -373,7 +372,6 @@ body {
   letter-spacing: 0.5px;
 }
 
-/* Typography adjustments inside sections */
 .sub-heading {
   color: #ffffff;
   margin-top: 16px;
