@@ -12,3 +12,7 @@ in terms of the extra blurring delay when the 'add to my list' bar appears, i'm 
 # The perceived delay or lag happens because of how browsers handle backdrop-filter during opacity transitions.
 
 # When the parent overlay fades in from opacity: 0 to opacity: 1, the browser's graphics engine is forced to recalculate and re-render the background blur frame-by-frame at fractional opacities. On many GPUs, this creates a slight rendering lag where the blur takes a moment to "settle." 
+
+- used gemini to help me with more ideas on how to improve the microinteractions or how to add on to them
+
+- used gemini to figure out how to code out these ideas
